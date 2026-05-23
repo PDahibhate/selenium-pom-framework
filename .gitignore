@@ -1,0 +1,23 @@
+# Maven
+target/
+*.class
+
+# Reports (generated at runtime)
+reports/ExtentReport.html
+reports/screenshots/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.project
+*.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+    TestNG Suite — Selenium POM Framework
+    Author: Prachi Dahibhate
+    Run: mvn test  OR  mvn test -Dbrowser=firefox -Dheadless=true
+-->
+<suite name="SauceDemo Automation Suite"
+       verbose="2"
+       parallel="methods"
+       thread-count="3">
+
+    <listeners>
+        <listener class-name="com.prachi.listeners.TestListener"/>
+    </listeners>
+
+    <!-- ── Smoke Tests ──────────────────────────────────────────────── -->
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.prachi.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ── Regression Tests ─────────────────────────────────────────── -->
+    <test name="Regression — Login">
+        <classes>
+            <class name="com.prachi.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression — Checkout">
+        <classes>
+            <class name="com.prachi.tests.CheckoutTest"/>
+        </classes>
+    </test>
+
+</suite>
